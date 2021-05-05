@@ -1,0 +1,41 @@
+<div class="list-page-container">
+    <div class="search-area">
+        <img src="./../../../assets/img/logomini.png" alt="logo">
+        <input type="text" placeholder="Search anything" [formControl]="searchForm" />
+        <button [disabled]="searchButtonDisabled" (click)="search()">Search</button>
+    </div>
+    <div class="search-result" *ngIf="searchResults.length > 0">
+        <div class="sort">
+            <div class="container">
+                <div class="button">
+                    <img src="./../../../assets\img\sort-icon.png" alt="order-by">
+                    <span>Order By</span>
+                </div>
+                <div class="area">
+                    <div class="sort-item" (click)="sortingData('nameAsc')">Name ascending</div>
+                    <div class="sort-item" (click)="sortingData('nameDesc')">Name descending</div>
+                    <div class="sort-item" (click)="sortingData('yearAsc')">Year ascending</div>
+                    <div class="sort-item" (click)="sortingData('yearDesc')">Year descending</div>
+                </div>
+            </div>
+        </div>
+        <div class="item" *ngFor="let result of searchResultList">
+            <span class="item-text">{{result.title}}</span>
+            <span class="item-date">{{result.name}} - {{result.year}}</span>
+        </div>
+
+        <div class="pagination-area" *ngIf="(pagingList.length-1) > 0">
+            <ng-container *ngFor="let item of pagingList;">
+                <li class="page-number" [ngClass]="{'active-page-number' : activePage === item }" *ngIf="isNumber(item)"
+                    (click)="newPage(item)">
+                    <span>{{item + 1}}</span>
+                </li>
+                <li class="page-number-dot" *ngIf="!isNumber(item)">
+                    <span>{{item }}</span>
+                </li>
+            </ng-container>
+            <button class="next-page-button" (click)="newPage(activePage+1)" [disabled]="activePage === (pageCount-1)">
+                Next</button>
+        </div>
+    </div>
+</div>

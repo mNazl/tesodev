@@ -1,0 +1,19 @@
+<div class="search-page-container">
+    <div class="search-page-area">
+        <div class="logo-area">
+            <img src="./../../../assets/img/logo.png" alt="logo" />
+        </div>
+        <div class="search-text">Search web app</div>
+        <div class="search">
+            <input type="text" placeholder="Search anything" [formControl]="searchForm" />
+            <button (click)="showMore()" [disabled]="searchButtonDisabled">Search</button>
+        </div>
+        <div class="search-result" *ngIf="searchResults.length > 0">
+            <div class="item" *ngFor="let result of searchResults | slice:0:3;">
+                <span class="item-text">{{result.title}}</span>
+                <span class="item-date">{{result.name}} - {{result.year}}</span>
+            </div>
+            <div class="show-more-link" (click)="showMore()">Show more...</div>
+        </div>
+    </div>
+</div>
