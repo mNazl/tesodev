@@ -2,8 +2,9 @@
 
 Before starting, run these commands.
 
-`npm install -g @angular/cli`
-`npm install` 
+```bash 
+npm install -g @angular/cli
+npm install``` 
 
 ## Development server
 
