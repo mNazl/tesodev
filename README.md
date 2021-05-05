@@ -1,6 +1,9 @@
 # Tesodev
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
+Before starting, run these commands.
+
+`npm install -g @angular/cli`
+`npm install` 
 
 ## Development server
 
