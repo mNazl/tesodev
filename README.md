@@ -4,7 +4,8 @@ Before starting, run these commands.
 
 ```bash 
 npm install -g @angular/cli
-npm install``` 
+npm install
+``` 
 
 ## Development server
 
